@@ -1,0 +1,53 @@
+{
+  "models": [
+    "openai/gpt-4o-mini",
+    "anthropic/claude-sonnet-4.5",
+    "google/gemini-2.5-flash",
+    "meta-llama/llama-4-maverick",
+    "deepseek/deepseek-chat",
+    "openai/gpt-5-chat"
+  ],
+  "trials": 8,
+  "asr": {
+    "none": [
+      48,
+      96
+    ],
+    "tma_nm": [
+      0,
+      96
+    ]
+  },
+  "util": {
+    "none": [
+      95,
+      96
+    ],
+    "tma_nm": [
+      95,
+      96
+    ]
+  },
+  "backend": "mem0+qdrant+MiniLM",
+  "wilson": {
+    "none": [
+      50.0,
+      40.192229167030874,
+      59.80777083296912
+    ],
+    "tma_nm": [
+      0.0,
+      0.0,
+      3.8476947484815947
+    ]
+  },
+  "perm": {
+    "dASR_pts": 50.0,
+    "p": 4.999750012499375e-05
+  },
+  "legit_util": {
+    "none": 98.95833333333334,
+    "tma_nm": 98.95833333333334
+  },
+  "cost_usd": 0.2962862469999976
+}

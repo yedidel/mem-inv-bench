@@ -1,0 +1,51 @@
+{
+  "models": [
+    "openai/gpt-4o-mini",
+    "anthropic/claude-sonnet-4.5",
+    "google/gemini-2.5-flash"
+  ],
+  "trials": 4,
+  "res": {
+    "S1 single (k=2)": {
+      "naive": [
+        0,
+        12
+      ],
+      "domain": [
+        0,
+        12
+      ]
+    },
+    "S2 two independent (k=2)": {
+      "naive": [
+        8,
+        12
+      ],
+      "domain": [
+        8,
+        12
+      ]
+    },
+    "S3 two correlated (k=2)": {
+      "naive": [
+        8,
+        12
+      ],
+      "domain": [
+        0,
+        12
+      ]
+    },
+    "S4 two independent (k=3)": {
+      "naive": [
+        0,
+        12
+      ],
+      "domain": [
+        0,
+        12
+      ]
+    }
+  },
+  "cost_usd": 0.02235979999999671
+}

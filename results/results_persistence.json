@@ -1,0 +1,26 @@
+{
+  "model": "openai/gpt-4o-mini",
+  "trials": 8,
+  "curve": {
+    "0": {
+      "none": 54.8,
+      "temporal_auth": 0.0
+    },
+    "1": {
+      "none": 57.1,
+      "temporal_auth": 0.0
+    },
+    "2": {
+      "none": 60.7,
+      "temporal_auth": 0.0
+    },
+    "4": {
+      "none": 52.4,
+      "temporal_auth": 0.0
+    },
+    "8": {
+      "none": 51.2,
+      "temporal_auth": 0.0
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "models": [
+    "openai/gpt-5-chat",
+    "openai/gpt-4o-mini",
+    "anthropic/claude-opus-4.1",
+    "anthropic/claude-sonnet-4.5",
+    "google/gemini-2.5-flash",
+    "meta-llama/llama-4-maverick",
+    "deepseek/deepseek-chat",
+    "qwen/qwen3-235b-a22b"
+  ],
+  "trials": 8,
+  "cells": {
+    "none": [
+      79,
+      0,
+      128
+    ],
+    "tma_nm": [
+      0,
+      78,
+      128
+    ]
+  }
+}

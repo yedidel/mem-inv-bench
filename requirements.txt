@@ -1,0 +1,12 @@
+# Core (harness, stats, figures)
+requests>=2.31
+numpy>=1.24
+matplotlib>=3.7
+
+# Optional: production-backend evaluation (code/mem0_eval.py)
+# mem0ai>=0.1.0
+# sentence-transformers>=2.2
+# qdrant-client>=1.7
+
+# Formal verification additionally needs Java (JRE 11+) and tla2tools.jar
+# (see formal/DOWNLOAD_TLA.md). No Python package required for TLC.

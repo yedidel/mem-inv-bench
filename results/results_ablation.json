@@ -1,0 +1,912 @@
+{
+  "models": [
+    "openai/gpt-5-chat",
+    "openai/gpt-4o-mini",
+    "anthropic/claude-opus-4.1",
+    "anthropic/claude-sonnet-4.5",
+    "google/gemini-2.5-flash",
+    "meta-llama/llama-4-maverick",
+    "deepseek/deepseek-chat",
+    "qwen/qwen3-235b-a22b"
+  ],
+  "trials": 6,
+  "results": {
+    "openai/gpt-5-chat": {
+      "none": {
+        "cons_static_asr": 50.8,
+        "cons_adapt_asr": 38.1,
+        "cons_white_asr": 21.4,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 64,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 48,
+          "cons_white_n": 126,
+          "cons_white_hit": 27,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 50.8,
+        "cons_adapt_asr": 38.1,
+        "cons_white_asr": 21.4,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 64,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 48,
+          "cons_white_n": 126,
+          "cons_white_hit": 27,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 76.9,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 120
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      }
+    },
+    "openai/gpt-4o-mini": {
+      "none": {
+        "cons_static_asr": 54.8,
+        "cons_adapt_asr": 28.6,
+        "cons_white_asr": 28.6,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 69,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 36,
+          "cons_white_n": 126,
+          "cons_white_hit": 36,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 54.8,
+        "cons_adapt_asr": 28.6,
+        "cons_white_asr": 28.6,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 69,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 36,
+          "cons_white_n": 126,
+          "cons_white_hit": 36,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 76.9,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 120
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      }
+    },
+    "anthropic/claude-opus-4.1": {
+      "none": {
+        "cons_static_asr": 43.7,
+        "cons_adapt_asr": 37.3,
+        "cons_white_asr": 9.5,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 55,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 47,
+          "cons_white_n": 126,
+          "cons_white_hit": 12,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 43.7,
+        "cons_adapt_asr": 37.3,
+        "cons_white_asr": 9.5,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 55,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 47,
+          "cons_white_n": 126,
+          "cons_white_hit": 12,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 76.9,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 120
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      }
+    },
+    "anthropic/claude-sonnet-4.5": {
+      "none": {
+        "cons_static_asr": 7.1,
+        "cons_adapt_asr": 4.8,
+        "cons_white_asr": 4.8,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 9,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 6,
+          "cons_white_n": 126,
+          "cons_white_hit": 6,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 7.1,
+        "cons_adapt_asr": 4.8,
+        "cons_white_asr": 4.8,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 9,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 6,
+          "cons_white_n": 126,
+          "cons_white_hit": 6,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 76.9,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 120
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 96.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 150
+        }
+      }
+    },
+    "google/gemini-2.5-flash": {
+      "none": {
+        "cons_static_asr": 65.9,
+        "cons_adapt_asr": 38.9,
+        "cons_white_asr": 33.3,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 91.7,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 83,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 49,
+          "cons_white_n": 126,
+          "cons_white_hit": 42,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 143
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 91.7,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 143
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 65.9,
+        "cons_adapt_asr": 38.9,
+        "cons_white_asr": 33.3,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 91.7,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 83,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 49,
+          "cons_white_n": 126,
+          "cons_white_hit": 42,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 143
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 72.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 113
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 91.7,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 143
+        }
+      }
+    },
+    "meta-llama/llama-4-maverick": {
+      "none": {
+        "cons_static_asr": 38.1,
+        "cons_adapt_asr": 20.6,
+        "cons_white_asr": 28.6,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 99.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 48,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 26,
+          "cons_white_n": 126,
+          "cons_white_hit": 36,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 155
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 99.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 155
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 38.1,
+        "cons_adapt_asr": 20.6,
+        "cons_white_asr": 28.6,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 99.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 48,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 26,
+          "cons_white_n": 126,
+          "cons_white_hit": 36,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 155
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 80.1,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 125
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 99.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 155
+        }
+      }
+    },
+    "deepseek/deepseek-chat": {
+      "none": {
+        "cons_static_asr": 33.3,
+        "cons_adapt_asr": 19.8,
+        "cons_white_asr": 21.4,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 93.6,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 42,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 25,
+          "cons_white_n": 126,
+          "cons_white_hit": 27,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 146
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 93.6,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 146
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 33.3,
+        "cons_adapt_asr": 19.8,
+        "cons_white_asr": 21.4,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 93.6,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 42,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 25,
+          "cons_white_n": 126,
+          "cons_white_hit": 27,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 146
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 76.9,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 120
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 93.6,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 146
+        }
+      }
+    },
+    "qwen/qwen3-235b-a22b": {
+      "none": {
+        "cons_static_asr": 57.9,
+        "cons_adapt_asr": 33.3,
+        "cons_white_asr": 28.6,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 97.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 73,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 42,
+          "cons_white_n": 126,
+          "cons_white_hit": 36,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 152
+        }
+      },
+      "temporal_auth": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 97.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 152
+        }
+      },
+      "ta_no_binding": {
+        "cons_static_asr": 57.9,
+        "cons_adapt_asr": 33.3,
+        "cons_white_asr": 28.6,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 97.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 73,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 42,
+          "cons_white_n": 126,
+          "cons_white_hit": 36,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 152
+        }
+      },
+      "ta_no_elevation": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 78.2,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 122
+        }
+      },
+      "ta_no_log": {
+        "cons_static_asr": 0.0,
+        "cons_adapt_asr": 0.0,
+        "cons_white_asr": 0.0,
+        "bias_static": 0.0,
+        "bias_adapt": 0.0,
+        "utility": 97.4,
+        "raw": {
+          "cons_static_n": 126,
+          "cons_static_hit": 0,
+          "cons_adapt_n": 126,
+          "cons_adapt_hit": 0,
+          "cons_white_n": 126,
+          "cons_white_hit": 0,
+          "bias_static_n": 0,
+          "bias_static_hit": 0,
+          "bias_adapt_n": 0,
+          "bias_adapt_hit": 0,
+          "util_n": 156,
+          "util_hit": 152
+        }
+      }
+    }
+  },
+  "cost_usd": 6.039355205
+}
