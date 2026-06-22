@@ -3,7 +3,7 @@
 Code, formal model, and benchmark for the paper
 **"Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees."**
 
-- **Benchmark dataset (Hugging Face):** https://huggingface.co/datasets/USERNAME/MEM-INV-Bench  <!-- TODO: replace USERNAME after upload -->
+- **Benchmark dataset (Hugging Face):** [https://huggingface.co/datasets/USERNAME/MEM-INV-Bench  <!-- TODO: replace USERNAME after upload -->](https://huggingface.co/datasets/anonymos-2321135/MEM-INV-Bench)
 - **Paper:** (link upon publication / arXiv)
 
 This repository is the canonical home for the **code, harness, and formal model**. The
