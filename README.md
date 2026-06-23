@@ -42,7 +42,8 @@ memory item's **write-time origin**, propagates it **non-malleably**, and elevat
 ## Layout
 ```
 code/      reference harness + all experiment scripts (see table below)
-data/      scenarios.json, scenarios_large.json   (the benchmark scenarios + variants)
+data/      scenarios.json, scenarios_large.json,   (the benchmark scenarios + variants)
+           scenarios_headtohead.json               (four published pipelines reproduced as drop-in attacks)
 results/   results_*.json                          (the exact JSON logs behind the paper)
 formal/    MemAuthority.tla + *.cfg                (TLA+ separation model + inductive invariant)
 ```
@@ -52,6 +53,7 @@ formal/    MemAuthority.tla + *.cfg                (TLA+ separation model + indu
 | `code/benchmark.py` | unified cross-defense x channel x model study -> `results_unified.json` |
 | `code/laundering.py` | the laundering matrix (witness of the separation) |
 | `code/agent_bench.py` | cross-model trigger-style study and ablation -> `results.json`, `results_ablation.json` |
+| `code/headtohead.py` | head-to-head vs four published poisoning pipelines -> `results_headtohead.json` |
 | `code/multiturn.py` | multi-turn agentic loop (value-level taint across turns) |
 | `code/mem0_eval.py` | end-to-end over a production backend (Mem0 + Qdrant + MiniLM) |
 | `code/sensitivity.py` | content-judge threshold sweep (Pareto frontier) |
@@ -66,6 +68,7 @@ formal/    MemAuthority.tla + *.cfg                (TLA+ separation model + indu
 ## Headline results (all from real runs; see `results/`)
 - **Unified (8 models):** `tma_nm` is 0% on the direct attack and 0% on laundering at 100% legit-utility. `trust_score` is laundered (68%), `capability_ifc` also permits the direct attack (84%), and `lineage` is laundered by summarization/echo (47%).
 - **Cross-model (8 models):** `tma_nm` records 0/4032 successful consequential attacks (Wilson CI [0,0.1]%), at task utility 95.9%.
+- **Head-to-head vs published pipelines (8 models):** reproducing MemMorph, MemoryGraft, Trojan Hippo, and a conversational Trojan as drop-in attacks, `tma_nm` blocks all four (0/1152, 0.0%) at utility equal to undefended; `none` 38.2%, `prob_detect` 12.0%, `lineage` 19.6% (lineage gives no protection on the Trojan Hippo exfiltration, 78.5%).
 - **Ablation:** removing origin binding restores attacks, removing elevation drops utility 96% -> 77%, removing the log changes neither.
 - **Sensitivity:** no content-judge threshold reaches (0% ASR, 100% utility); TMA-NM does.
 - **Threshold k:** auto-authorize iff independent vouchers >= k; attack ASR is 0% for every k.
@@ -84,6 +87,7 @@ python code/check_invariant.py
 
 # real runs (report cost + remaining balance after each run):
 python code/benchmark.py --trials 8
+python code/headtohead.py --trials 6     # vs MemMorph, MemoryGraft, Trojan Hippo, conversational Trojan
 python code/laundering.py
 python code/sensitivity.py
 python code/threshold_sweep.py

@@ -377,6 +377,8 @@ def main():
                     help="cross-session persistence sweep over N intervening sessions")
     ap.add_argument("--scenarios", default=None,
                     help="path to a scenarios JSON (default: scenarios.json)")
+    ap.add_argument("--out", default=None,
+                    help="path for the full-run results JSON (default: results.json)")
     args = ap.parse_args()
 
     if args.scenarios:
@@ -438,9 +440,10 @@ def main():
             print()
         return
 
-    results = evaluate(models, args.trials, checkpoint=HERE / "results.json")
+    out_path = Path(args.out) if args.out else (HERE / "results.json")
+    results = evaluate(models, args.trials, checkpoint=out_path)
     spent, rem1 = llm.report_cost(use0, "full run")
-    (HERE / "results.json").write_text(json.dumps(
+    out_path.write_text(json.dumps(
         {"models": models, "trials": args.trials, "scenarios": len(SCENARIOS),
          "results": results, "cost_usd": spent, "balance_remaining_usd": rem1},
         indent=2), encoding="utf-8")
