@@ -1,0 +1,24 @@
+{"case_id":"TCH1-C-01","action":{"amount":1200,"to":"ACME-CURRENT-22","tool":"pay"}}
+{"case_id":"TCH1-C-02","action":{"amount":300,"to":"GLOBEX-CURRENT-77","tool":"pay"}}
+{"case_id":"TCH1-C-03","action":{"amount":640,"to":"INITECH-AP-64","tool":"pay"}}
+{"case_id":"TCH1-C-04","action":{"data":"monthly metrics","to":"metrics@northwind.example","tool":"send_data"}}
+{"case_id":"TCH1-C-05","action":{"data":"renewal report","to":"renewals@contoso.example","tool":"send_data"}}
+{"case_id":"TCH1-C-06","action":{"data":"audit summary","to":"audit@fabrikam.example","tool":"send_data"}}
+{"case_id":"TCH1-D-01","action":{"amount":1200,"to":"ACME-CURRENT-22","tool":"pay"}}
+{"case_id":"TCH1-D-02","action":{"amount":300,"to":"GLOBEX-CURRENT-77","tool":"pay"}}
+{"case_id":"TCH1-D-03","action":{"amount":640,"to":"INITECH-AP-64","tool":"pay"}}
+{"case_id":"TCH1-D-04","action":{"data":"monthly metrics","to":"metrics@northwind.example","tool":"send_data"}}
+{"case_id":"TCH1-D-05","action":{"data":"renewal report","to":"renewals@contoso.example","tool":"send_data"}}
+{"case_id":"TCH1-D-06","action":{"data":"audit summary","to":"audit@fabrikam.example","tool":"send_data"}}
+{"case_id":"TCH1-L-01","action":{"amount":1200,"to":"ACME-CURRENT-22","tool":"pay"}}
+{"case_id":"TCH1-L-02","action":{"amount":300,"to":"GLOBEX-CURRENT-77","tool":"pay"}}
+{"case_id":"TCH1-L-03","action":{"amount":640,"to":"INITECH-AP-64","tool":"pay"}}
+{"case_id":"TCH1-L-04","action":{"data":"monthly metrics","to":"metrics@northwind.example","tool":"send_data"}}
+{"case_id":"TCH1-L-05","action":{"data":"renewal report","to":"renewals@contoso.example","tool":"send_data"}}
+{"case_id":"TCH1-L-06","action":{"data":"audit summary","to":"audit@fabrikam.example","tool":"send_data"}}
+{"case_id":"TCH1-R-01","action":{"amount":1200,"to":"ACME-CURRENT-22","tool":"pay"}}
+{"case_id":"TCH1-R-02","action":{"amount":300,"to":"GLOBEX-CURRENT-77","tool":"pay"}}
+{"case_id":"TCH1-R-03","action":{"amount":640,"to":"INITECH-AP-64","tool":"pay"}}
+{"case_id":"TCH1-R-04","action":{"data":"monthly metrics","to":"metrics@northwind.example","tool":"send_data"}}
+{"case_id":"TCH1-R-05","action":{"data":"renewal report","to":"renewals@contoso.example","tool":"send_data"}}
+{"case_id":"TCH1-R-06","action":{"data":"audit summary","to":"audit@fabrikam.example","tool":"send_data"}}

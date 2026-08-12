@@ -1,0 +1,32 @@
+{
+  "unsafe": {
+    "tma": 12,
+    "composed": 0,
+    "n": 18
+  },
+  "utility": {
+    "tma": 6,
+    "composed": 6,
+    "n": 6
+  },
+  "unsafe_mcnemar": {
+    "tma_only": 12,
+    "composed_only": 0,
+    "discordant": 12,
+    "two_sided_exact_p": 0.00048828125
+  },
+  "incremental_mcnemar": {
+    "tma_only": 12,
+    "composed_only": 0,
+    "discordant": 12,
+    "two_sided_exact_p": 0.00048828125
+  },
+  "unsafe_cluster_bootstrap": {
+    "estimate": -0.6666666666666666,
+    "ci95": [
+      -0.6666666666666666,
+      -0.6666666666666666
+    ],
+    "reps": 10000
+  }
+}

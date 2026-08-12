@@ -1,0 +1,21 @@
+{
+  "artifact": "meminv_reference_integrity_extension_v1",
+  "official": false,
+  "upstream_commit": "63f1359d677efbe1a65b982b2a54cabfec97f1e1",
+  "files": {
+    ".github/workflows/offline-reproduction.yml": "e1b600ccc4c58e89e654272e191dfeaf9b3b44619390ed81d34be0209e432cf4",
+    "Dockerfile": "26f693e1e4ed9e3071982e0ab4448b89a2abb4bbf8f55ea9b24a200fa3ae665d",
+    "PR_DRAFT.md": "6480847bdc4c29ccd747cd988d53b33d0aaa506fef97be1db3050c444e120061",
+    "README.md": "69862ff1564cd5c175b05c26ed60767c0fd5c92a9f6a8de6e084cc835d8a7068",
+    "THIRD_PARTY_REPLICATION.md": "625f8823f7248e3a251c0ca8d666fa8c23f75a0b0a2561a05e10bfcb771a2f0e",
+    "UPSTREAM_LICENSE": "8a533b573465c7e1109de11bd92fbdddce2c3ecd86a89d6e6f5edf75b5460431",
+    "evidence/actor_proposals.jsonl": "2d52b1c372b872e16339b9f24fffaa9c5fed2a9b8a0a900f4a66a297c3221fc3",
+    "evidence/expected_offline_result.json": "03eaa8627cd53544ba6b29769014c0eee63e763b342971131f67f26ec1748c2d",
+    "frozen/cases.jsonl": "ae78cf29380989bfd244efa8fc127b1350ae75fb42d98e79c32bd4583c46b09d",
+    "frozen/protocol.lock.json": "bcb16cf006d7c430e61f5797590e84473fed7cbdf83b2e56a5869b4a7f542efb",
+    "live/run_openai.py": "0cd8cb80c0e09aee80db44de30968852a0bc8d3c008db12bdf74e22741f1bcdd",
+    "reproduce_offline.sh": "a275719c4d7592f2868d8f04a65b52dffe1c37a95ca1961f7721b4922758646d",
+    "src/reproduce.py": "20ee5b6281c9c418175dfe0566fa4e8618963b35a4a984ae5d1730551e26708c",
+    "tests/test_extension.py": "f427b693abba93e2aecac529e870359489268e9177206240821ead06674c95df"
+  }
+}
