@@ -1,5 +1,13 @@
 # MEM-INV-Bench / Non-Malleable Memory Authority (TMA-NM)
 
+> **Two versions live here.** `v2/` is the artifact for the current paper and
+> supersedes the root directory for every reported number. The root files are
+> the artifact for the earlier preprint and are kept unchanged so existing
+> citations still resolve. v2 restates the security property so that it is no
+> longer the gate's own guard, which turns one of v1's positive claims into a
+> negative result about origin binding; see `v2/README.md`.
+
+
 Code, formal model, and benchmark for the paper
 **"Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees."**
 
