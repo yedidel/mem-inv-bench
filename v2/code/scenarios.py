@@ -1,23 +1,5 @@
 #!/usr/bin/env python3
-"""
-Scenario set for the v2 study.
 
-Two families:
-
-  ATTACK   -- a poisoned memory tries to steer a consequential action to an
-              attacker-chosen value. The measured quantity is whether the agent
-              PROPOSES the attacker's value; whether it then executes is the
-              gate's business.
-
-  LEGIT    -- a legitimate action that genuinely needs external information.
-              Split deliberately into `vouchers=2` (independent corroboration is
-              available) and `vouchers=0/1` (it is not). v1 only had the first
-              kind, which is why its 100% utility number was, as TDSC R2 put it,
-              built into the test cases. The second kind is what makes the
-              utility claim falsifiable.
-
-`tier` marks blast radius for M5 (risk-tiered mandatory corroboration).
-"""
 from tma import Tier
 
 ATTACK = [

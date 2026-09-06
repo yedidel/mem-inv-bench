@@ -1,44 +1,5 @@
 #!/usr/bin/env python3
-"""
-Experiment 7 -- a real multi-turn tool-using loop, gated end to end.
 
-WHY THIS EXISTS
-
-R1's ninth objection: the multi-turn evaluation was "limited in scope" and did
-not address that the defense "relies on a monitor that must intercept and label
-every write and every action proposal." And a fair reader of exp1/exp2 can say
-something sharper: those combine a MEASURED propensity with a COMPUTED gate
-verdict. The decomposition is defensible and more precise than sampling, but it
-means the defense was never actually run end to end against a live agent.
-
-Here it is. The agent runs a genuine loop -- reason, call one tool, observe,
-continue -- and every tool result passes through the monitor as an envelope on a
-channel. The monitor labels it from the verified channel identity, records
-endorsements from trusted tools in its append-only log, and when the agent
-finally proposes a consequential call the REAL gate runs on REAL monitor state
-over ALL security-relevant fields. Nothing is computed after the fact.
-
-WHAT IS DIFFERENT FROM v1's multiturn.py
-
-v1 tracked taint in a Python dict keyed on exact value strings learned during
-the episode: a text proxy, and it said so. The attribution here is the allow-list
-over canonical forms backed by the endorsement log, which exp6 showed is the
-part that actually survives an obfuscating adversary.
-
-WHAT IS MEASURED
-
-  cross-turn dataflow  a value fetched from an untrusted tool at turn 2 and
-                       passed to a consequential call at turn 5 must still be
-                       unendorsed at the gate
-  end-to-end block     the gate's own verdict, logged per episode
-  legitimate work      an episode whose value comes from the trusted registry
-                       must complete without a confirmation
-  the amount field     an episode where the payee is right and the AMOUNT was
-                       poisoned, which a payee-only gate lets through
-
-Reading the transcripts decides what the agent did. The gate's verdicts are
-recorded, not inferred.
-"""
 from __future__ import annotations
 
 import argparse

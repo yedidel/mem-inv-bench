@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""
-Reading surface and scoring for exp3 (longitudinal history).
 
-Same discipline as exp1: the bucket is a reading hint, the reading is the
-verdict, and everything that carries no decision (provider filter, truncation,
-malformed action) stays out of every denominator.
-
-Reads the per-row checkpoint files, which carry every model even when a run_id
-collision meant several processes shared one transcript.
-"""
 from __future__ import annotations
 
 import argparse

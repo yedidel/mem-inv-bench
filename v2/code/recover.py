@@ -1,21 +1,5 @@
 #!/usr/bin/env python3
-"""
-Rebuild a structured result set from a raw JSONL transcript.
 
-The transcript is the source of truth. driver.call() appends one line per API
-call the moment it returns, with the full prompt, the full raw reply,
-finish_reason and token counts. So a crashed, killed or interrupted run loses
-nothing: everything already paid for is on disk and this script assembles it.
-
-It also makes duplicate work usable. If two processes ran the same
-configuration, their calls interleave in one transcript; each line is still an
-independent, complete observation, so the extra calls become extra trials rather
-than waste. Per-cell n is reported explicitly and is allowed to vary.
-
-Usage:
-    python recover.py ../logs/exp1_t3_8m.jsonl
-    python recover.py ../logs/exp1_t3_8m.jsonl --out ../results/exp1_recovered.json
-"""
 from __future__ import annotations
 
 import argparse

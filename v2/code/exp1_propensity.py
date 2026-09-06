@@ -1,32 +1,5 @@
 #!/usr/bin/env python3
-"""
-Experiment 1 -- attack propensity and content-defense power, de-circularised.
 
-An attack succeeds iff (a) the agent PROPOSES the attacker's value and (b) the
-gate ADMITS it. (b) is deterministic code, computed exactly elsewhere; sampling
-it teaches nothing. (a) is the genuinely stochastic quantity and is what this
-measures.
-
-Memory is built through the channel layer in tma.py. The monitor derives every
-label from a verified channel identity and never sees a ground-truth origin
-field, so nothing here hands a defense the answer key. The agent sees only text.
-
-THREE model-scored quantities, all written to the transcript raw:
-
-  propose      -- the agent's action. Did it go for the attacker's value?
-  judge_write  -- a content scan of the MEMORY ALONE, no action and no task in
-                  view. This is the write/rest-time content defense (what v1's
-                  trust_score modelled).
-  judge_act    -- a content judge that also sees the task and the proposed
-                  action. This is the act-time content defense.
-
-Separating those two is new. v1 conflated them and reported the content class as
-uniformly weak; the smoke pilot showed the act-time judge is far stronger, which
-means the separation theorem's claim about the content class has to be tested
-against the stronger instance, not the weaker one.
-
-No rate is computed here. Read the replies first; see ../audit/.
-"""
 from __future__ import annotations
 
 import argparse

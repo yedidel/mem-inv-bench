@@ -1,56 +1,5 @@
 #!/usr/bin/env python3
-"""
-Experiment 6 -- value attribution under an obfuscating adversary.
 
-THE GAP THIS EXISTS TO CLOSE
-
-Everything upstream assumes the monitor knows WHICH retrieved memory item drove
-the security-relevant value of an action. v1 answered that with substring
-matching and admitted in its own limitations that an obfuscating adversary could
-evade it. Three TDSC reviewers named the gap (R1.3, R1.10, R2, R3.12). v2 had
-not addressed it either, which meant the same circularity survived one level
-down: the harness was still telling the monitor which items supported the value.
-
-THE DIAGNOSIS
-
-v1's attribution rule is a DENY-LIST:
-
-    deny if the action's value appears inside some untrusted memory item
-
-That is evadable by construction. The adversary controls the encoding, so it
-writes the account in a form that does not appear verbatim -- split across two
-notes, base64'd, spelled out, homoglyphed -- and lets the model reassemble it.
-The value the agent finally emits never textually matched anything, so nothing
-is attributed and the action passes.
-
-THE FIX, which is not a better matcher
-
-Invert the rule into an ALLOW-LIST:
-
-    allow only if the action's value was ENDORSED by a trusted channel
-
-Now the adversary's encoding is irrelevant. Whatever it does, the decoded value
-still is not on the allow-list, so the action is denied. Obfuscation cannot
-manufacture an endorsement. The rule is fail-closed on any value the monitor has
-never seen a trusted principal assert.
-
-This is not free, and the cost is what this experiment measures. Any value the
-agent legitimately TRANSFORMS -- reformats an account, normalises spacing,
-strips a prefix -- is no longer verbatim on the allow-list and gets denied. That
-false-block rate is a real utility cost and it is reported, not hidden.
-
-WHAT IS MEASURED
-
-  attack   six obfuscations of the attacker's account, on real models:
-           split across items, spelled-out digits, base64, reversed,
-           arithmetic offset, homoglyph substitution
-           -> ASR under deny-list attribution vs allow-list attribution
-
-  utility  legitimate actions whose value is legitimately reformatted
-           -> false-block rate under allow-list attribution
-
-Reading the replies decides the outcome. Nothing here computes a rate.
-"""
 from __future__ import annotations
 
 import argparse

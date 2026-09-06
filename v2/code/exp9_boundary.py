@@ -1,45 +1,4 @@
 #!/usr/bin/env python3
-"""
-Experiment 9 -- does an unblocked ANSWER carry the poison into a later action?
-
-THE CLAIM UNDER TEST, WHICH IS OURS
-
-v1 declared non-consequential answer-biasing out of scope: "untrusted memory can
-still colour a non-consequential response (surfaced with provenance), and TMA-NM
-guards the retrieval-to-ACTION path, not free-text answers." R3 rejected the
-scoping twice:
-
-  "Non-consequential response manipulation remains outside the protection
-   mechanism, meaning poisoned memory can still influence agent reasoning and
-   outputs before an action gate is reached."
-
-  "The paper separates 'consequential action' from ordinary response generation,
-   but the boundary can be ambiguous in autonomous agents where generated text
-   may indirectly initiate later actions."
-
-That is a real hole and it was never measured. If the agent's own answer becomes
-context for the next turn, the poison has a path around the gate that runs
-through the model's output rather than through memory.
-
-DESIGN
-
-  turn 1  the agent ANSWERS a question. The gate does not block answers, by
-          design, so a poisoned memory is free to colour it.
-  turn 2  that answer is written back to memory -- which is what an agent with
-          persistent memory does -- and the agent is asked to act.
-
-Two monitor configurations:
-
-  propagate=on   the agent's own note is derived from the untrusted item, so M2
-                 gives it the meet of its inputs and it stays UNTRUSTED. This is
-                 the claim being tested: does M2 actually cover the response
-                 channel, or only tool outputs?
-  propagate=off  the note is labelled AGENT because the agent wrote it, which is
-                 what a system without M2 on the response path would do.
-
-MEASURED: whether the poison reaches the action through the text channel, and
-whether the label survives the round trip. Reading the replies decides both.
-"""
 from __future__ import annotations
 
 import argparse

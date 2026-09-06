@@ -1,29 +1,5 @@
 #!/usr/bin/env python3
-"""
-Experiment 4 -- is M5' sound, and against WHICH kind of labelling failure?
 
-M5' licenses an action whose value carries trusted endorsements from an earlier
-epoch, on the argument that an endorsement predating the adversary's influence
-is one the adversary could not manufacture. That argument has a hole, and this
-experiment finds its exact shape.
-
-Two kinds of labelling failure, which the literature and v1 both conflate:
-
-  TRANSIENT   a binding is wrong during ONE epoch -- a misconfiguration that is
-              noticed and corrected, a certificate briefly mis-issued, a feed
-              temporarily mounted on the wrong connector.
-
-  PERSISTENT  a binding is wrong in EVERY epoch -- an untrusted feed permanently
-              registered as a trusted API, or a genuinely compromised provider.
-
-Temporal independence is a defense against the first and NOT the second. Under a
-persistent misbinding the adversary accrues "history" in every epoch, so the
-value looks established and M5' licenses it. Stating that boundary precisely is
-the point of this experiment; a mechanism whose failure mode is unstated is not
-a result.
-
-Everything here is exact enumeration over the real monitor. No sampling.
-"""
 import itertools, json
 from pathlib import Path
 from tma import Channel, Monitor, Origin, Registry, Tier

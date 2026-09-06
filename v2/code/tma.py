@@ -1,58 +1,5 @@
 #!/usr/bin/env python3
-"""
-TMA-NM v2: origin-bound memory authority derived from an authenticated channel.
 
-The v1 harness handed the gate a `true_origin` field written by the scenario
-builder in the same file, so the defense was given the answer key. Three TDSC
-reviewers caught it. Here the pipeline is:
-
-    source --(envelope, signed)--> Channel --> Monitor.ingest() --> MemoryItem
-                                                    |
-                                        origin derived ONLY from the
-                                        VERIFIED channel identity
-
-`Monitor.ingest` never reads the payload text to decide origin, and no component
-downstream of it can see where the payload really came from. An adversary may put
-anything in the payload, including forged trust markers ("[Finance-verified]"),
-and may write freely on any channel it controls; it cannot mint a valid MAC for a
-channel whose key it does not hold.
-
-Label error is injected where it actually happens in deployment: at the channel
-BINDING, not as a magic flag on an item. See `Registry.misbind`.
-
-Mechanisms:
-  M1  write-time origin binding: act_class = f(verified channel kind)
-  M2  non-malleable propagation: derived items inherit the join (meet in trust)
-      of every input label; a tool output inherits the max-untrust of its bound
-      inputs
-  M3  Sybil-resistant corroboration-gated elevation: >= k independent trusted
-      principals, distinct trust domains, or a fresh action-bound user auth
-  M4  tamper-evident verdict log
-  M5  (new in v2) risk-tiered mandatory corroboration: for a high-blast-radius
-      action, require k independent principals EVEN IF the value is
-      trusted-labelled. This is what breaks the linear dependence on label
-      accuracy -- see the degradation study.
-  M5' (refinement) change-gated corroboration. Blunt M5 charges a confirmation
-      on EVERY high-tier action, including one whose value has been the value of
-      record for years, which is an unacceptable burden and is not needed:
-
-        An attack necessarily introduces a value that is not the established
-        one. If the adversary used the established payee there is no attack.
-        So the security-relevant event is always FIRST USE or CHANGE of a
-        value, never continued use of an established one.
-
-      M5' therefore counts an endorsement recorded in an earlier EPOCH as
-      independent of one recorded now. The justification is temporal rather
-      than principal-based: an endorsement written before the adversary had any
-      influence is one the adversary could not have manufactured.
-
-      This only works if the history is anchored where the adversary cannot
-      reach it. It is read from the monitor's append-only verdict log (M4),
-      never from agent memory, which the adversary can poison. M4 was inert in
-      v1 -- its ablation changed neither ASR nor utility, and two TDSC reviewers
-      said so. Here it carries the temporal-independence evidence and becomes
-      load-bearing.
-"""
 from __future__ import annotations
 
 import hashlib

@@ -1,26 +1,5 @@
 #!/usr/bin/env python3
-"""
-Restored measurements: cost vector, threshold sweep, lineage defaults, ablation.
 
-Four things the earlier paper measured and this one had dropped. Each is
-re-measured here under the CURRENT harness rather than carried over, because the
-earlier harness is the one whose defects this work documents.
-
-  1. cost vector      latency, throughput, memory and per-decision monetary cost
-                      for the gate against a content-judge baseline. A
-                      deployability claim needs every dimension a deployer
-                      weighs, not latency alone.
-  2. threshold sweep  the independence requirement k from 1 to 4 against m
-                      available vouchers, so the parameter is shown to
-                      generalise rather than asserted to.
-  3. lineage defaults a lineage gate must pick a default when attribution is
-                      inconclusive. Comparing default-allow with default-deny
-                      refutes the class more sharply than asserting it fails.
-  4. ablation         each mechanism disabled in turn, so every component
-                      presented as a contribution appears in an evaluation row.
-
-Everything here is deterministic and offline. No model is called.
-"""
 from __future__ import annotations
 
 import json

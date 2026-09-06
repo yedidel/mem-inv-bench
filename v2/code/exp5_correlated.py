@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""
-Experiment 5 -- correlated labelling errors, the weakness exp2 leaves open.
-
-exp2 treats each channel binding as independently wrong with probability eps.
-Real misbindings are not independent: one bad deployment script mounts several
-feeds behind the same connector, one mis-issued certificate covers a whole
-provider, one operator mistake repeats across a batch. If errors are correlated,
-M5's requirement of k INDEPENDENT trust domains buys much less than exp2 says,
-because a single fault supplies all k at once.
-
-This is the most dangerous unexamined assumption remaining in the quantitative
-story, so it gets measured rather than assumed away.
-
-MODEL. Total marginal error rate eps is split between two mechanisms by a
-correlation share lambda:
-
-  common cause  with probability lambda*eps a SINGLE latent fault misbinds every
-                adversary-reachable channel at once
-  independent   otherwise each channel is independently wrong at a rate chosen
-                so the marginal per-channel error stays exactly eps
-
-lambda = 0 reproduces exp2. lambda = 1 is a purely systemic failure mode.
-Everything is enumerated exactly over the real monitor; nothing is sampled.
-"""
 import itertools, json
 from pathlib import Path
 from tma import Channel, Monitor, Origin, Registry, Tier

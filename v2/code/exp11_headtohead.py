@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""
-Experiment 11 -- four published attack pipelines, and a whitebox adversary.
-
-Two things the earlier version of this work had and this one lost. Both are
-restored here in one pass, because they share a harness and because running them
-separately would pay for the same prompts twice.
-
-  Head-to-head.  AgentDojo shows the defense works inside a harness we did not
-  write. It does not show the defense works against attacks we did not design.
-  These are four published memory-poisoning pipelines, ported from their papers.
-
-  Whitebox trigger.  An adversary that knows the defense and forges its trust
-  markers inside the untrusted payload. The monitor derives origin from an
-  HMAC-verified channel identity and never from payload text, so the threat
-  model covers this by construction. Covering something by construction is a
-  claim about the design; this measures it.
-
-As everywhere in this study the stochastic quantity and the deterministic one
-are separated. Whether the agent proposes the attacker's value is sampled. What
-the gate then does is computed exactly, and where the gate's verdict merely
-restates its own rule we say so rather than reporting it as a result.
-
-No rate is computed in this file. Read the replies first; see ../audit/.
-"""
 from __future__ import annotations
 
 import argparse

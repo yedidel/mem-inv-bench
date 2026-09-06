@@ -1,44 +1,5 @@
 #!/usr/bin/env python3
-"""
-Experiment 8 -- the gate on an EXTERNAL benchmark we did not write.
 
-WHY THIS EXISTS
-
-Every scenario in exp1-exp7 is ours. A reviewer is entitled to say we designed
-the cases our defense handles, and no amount of internal rigour answers that.
-The answer is to run on someone else's benchmark, scored by someone else's
-criteria.
-
-AgentDojo (Debenedetti et al., NeurIPS 2024 Datasets & Benchmarks) is the right
-one: it is the standard agent prompt-injection benchmark, it is what CaMeL --
-one of our own baselines -- reports on, and it ships its own `utility()` and
-`security()` functions. We do not touch the tasks, the injections, or the
-scoring. We add a gate and report what their scorer says.
-
-NOTHING HERE IS HAND-PICKED. Three things could have been tuned in our favour,
-and all three are derived from the benchmark's own metadata:
-
-  the channel partition   `probe_channels.py` plants a marker in every injection
-                          vector AgentDojo declares and observes which tool
-                          outputs can carry it. A tool is untrusted iff
-                          adversary text can reach its output.
-  the consequential set   the final call of each injection task's own
-                          ground_truth() -- the call that achieves the
-                          attacker's goal, according to the benchmark.
-  the security-relevant   the arguments of those calls.
-  fields
-
-TWO VARIANTS, both reported:
-
-  strict    only the user's task query is trusted. No partition is used at all,
-            so there is nothing to cherry-pick. Maximum security, and it will
-            cost utility, because AgentDojo tasks legitimately take values from
-            tool outputs.
-  probed    the mechanically derived partition above. Recovers utility.
-
-Reporting the strict variant matters more than the probed one: it is the
-configuration in which we made no judgement calls whatsoever.
-"""
 from __future__ import annotations
 
 import argparse

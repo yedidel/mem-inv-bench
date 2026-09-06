@@ -1,39 +1,5 @@
 #!/usr/bin/env python3
-"""
-Experiment 2 -- exact degradation of memory authority under imperfect labelling.
 
-TDSC R2 asked for this by name: "An experiment is necessary where channel
-labeling is imperfect, and report how the guarantee degrades." R1 and R3 raised
-the same point three more times. It is also the empirical face of the new
-theorem T2 (MemAuth2.tla): origin-binding alone resists laundering but does NOT
-achieve the semantic security property, because one genuine-looking trusted
-endorsement is enough for it to act.
-
-METHOD -- and the reason this is not a simulation.
-
-An attack succeeds iff BOTH
-    (a) the agent proposes the attacker's value          [stochastic, model-dependent]
-    (b) the gate admits it given the monitor's labels     [deterministic code]
-
-(a) is measured with real models in exp1 and adjudicated by reading the replies.
-(b) is a deterministic function of which channel bindings are wrong. So (b) is
-not sampled: it is ENUMERATED EXHAUSTIVELY over all 2^C misbinding
-configurations, weighted by their probability. The reported curve therefore
-carries sampling error only from (a), and none at all from (b). Monte Carlo over
-the gate would be strictly worse -- it would add noise to a quantity we can
-compute exactly.
-
-    ASR(eps) = P_propose * SUM_over_configs P(config | eps) * [gate admits]
-
-LABEL-ERROR MODEL. Error is injected where it actually occurs in deployment: at
-the channel BINDING. An operator mounts a scraped vendor feed behind a binding
-the monitor believes is an authenticated API, and then every item arriving on
-that transport inherits the error. Each binding is independently wrong with
-probability eps. Two directions are swept separately because they have opposite
-consequences:
-    false-trusted   : an adversary-reachable channel is believed TRUSTED  (security)
-    false-untrusted : an honest registry is believed UNTRUSTED            (utility)
-"""
 from __future__ import annotations
 
 import argparse

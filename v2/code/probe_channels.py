@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""
-Derive the trusted/untrusted tool partition for AgentDojo MECHANICALLY.
-
-Applying an origin-bound gate to someone else's benchmark needs a channel
-partition, and choosing it by hand is exactly the move a reviewer should
-distrust: pick the right tools and any defense looks good.
-
-So it is not chosen. AgentDojo declares its own injection vectors. This script
-plants a unique marker in every one of them, runs every read-only tool with
-default arguments, and records which tools can return the marker. A tool is
-UNTRUSTED iff adversary-controlled text can reach its output. Everything else is
-TRUSTED.
-
-The partition is therefore a function of the benchmark's own metadata. Re-run
-this and you get the same answer.
-"""
 import json, inspect
 from pathlib import Path
 from agentdojo.task_suite.load_suites import get_suite

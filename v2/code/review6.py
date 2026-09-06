@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Reading surface and scoring for exp6 (value attribution).
 
-Three quantities per attack cell, and only the first needs a model:
-  1. did the agent commit the attacker's DECODED account?   [read]
-  2. would v1's deny-list attribution have caught it?        [computed]
-  3. does the allow-list attribution permit it?              [computed]
-"""
 import json, collections, math, sys
 from pathlib import Path
 from review import parse_action, target_of

@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-"""Scoring for exp7. The gate's verdicts are RECORDED per episode, not computed
-after the fact, so this only has to classify what the agent did."""
 import json, collections, glob, math
 from pathlib import Path
 from review import parse_action, target_of

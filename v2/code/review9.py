@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Scoring for exp9 (the answer-to-action boundary)."""
 import json, collections, math
 from pathlib import Path
 from review import parse_action, target_of
@@ -51,7 +50,7 @@ for k in ("POISON","BOTH","RECORD","NEITHER"):
     lo,hi=wilson(c[k],n)
     print(f"  answer names {k:8s} {c[k]:4d}/{n}  {100*c[k]/n if n else 0:5.1f}%  [{lo:.1f},{hi:.1f}]")
 print("\n  The gate does not block answers, by design. This is the size of the")
-print("  hole R3 pointed at.")
+
 
 print("\n"+"="*78)
 print("TURN 2 -- does that answer then drive the ACTION?\n")
