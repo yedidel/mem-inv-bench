@@ -1,13 +1,13 @@
 {
   "cost_vector": {
-    "gate_latency_us": 18.2,
-    "gate_throughput_per_s": 54961,
-    "gate_latency_us_log_disabled": 6.66,
+    "gate_latency_us": 19.3,
+    "gate_throughput_per_s": 51858,
+    "gate_latency_us_log_disabled": 6.97,
     "component_us": {
-      "canonicalise": 3.5,
-      "allow_list_lookup": 3.81,
-      "established_check": 5.29,
-      "independence_count": 0.6
+      "canonicalise": 3.56,
+      "allow_list_lookup": 3.95,
+      "established_check": 5.25,
+      "independence_count": 10.01
     },
     "log_bytes_per_verdict": 618,
     "gate_model_calls": 0,

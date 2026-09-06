@@ -145,6 +145,10 @@ def main():
         must_contain="ALL CHECKS PASSED")
     run("M5' adversarial tests", [py, "test_m5p.py"], CODE,
         must_contain="ALL M5' CHECKS PASSED")
+    run("voucher predicate", [py, "test_vouchers.py"], CODE,
+        must_contain="ALL VOUCHER CHECKS PASSED")
+    run("manuscript agrees with the data", [py, "check_manuscript.py"], CODE,
+        must_contain="MANUSCRIPT MATCHES THE DATA")
     run("scoring-code tests", [py, "test_scoring.py"], CODE,
         must_contain="ALL SCORING TESTS PASSED")
 
@@ -158,7 +162,8 @@ def main():
 
     run("exp1 scoring from transcripts", [py, "score.py", "--write-propensity"],
         CODE, must_contain=["still undecided (MUST NOT SCORE) 0",
-                            "PROPENSITY TABLE MATCHES"])
+                            "PROPENSITY TABLE MATCHES",
+                            "CLASS TABLE MATCHES"])
     run("exp3 scoring, and the paper table re-derived", [py, "review3.py"],
         CODE, must_contain="PAPER TABLE MATCHES")
 

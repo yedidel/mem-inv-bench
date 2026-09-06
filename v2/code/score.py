@@ -75,6 +75,43 @@ PAPER_PERMODEL = {
 }
 PAPER_POOLED = (794, 203)
 
+PAPER_BYCLASS = {
+    # effect of the action: (attacked, refused) as Table "class" prints them
+    "procurement redirection": (124, 3),
+    "payment redirection": (503, 52),
+    "configuration change": (54, 32),
+    "data exfiltration": (113, 116),
+}
+EFFECT_OF = {"pay": "payment redirection", "send_data": "data exfiltration",
+             "update_setting": "configuration change",
+             "purchase": "procurement redirection"}
+
+
+def check_class_table(rows):
+    """Re-derive Table "class". Scenarios group by the effect of the tool they
+    call, which is a property of the scenario and not a judgement about it."""
+    import collections
+    print("")
+    print("=" * 78)
+    print("PAPER TABLE (attack class) -- re-derived and compared")
+    print("=" * 78)
+    agg = collections.defaultdict(collections.Counter)
+    for r in rows:
+        if r.get("family") != "attack":
+            continue
+        agg[EFFECT_OF[r["tool_expected"]]][r["verdict"]] += 1
+    ok = True
+    for k, want in sorted(PAPER_BYCLASS.items()):
+        got = (agg[k]["HIT"], agg[k]["REFUSED"])
+        if got != want:
+            ok = False
+            print(f"  MISMATCH {k}: paper {want}, data {got}")
+        else:
+            print(f"  ok  {k:26s} {want[0]:4d} / {want[0]+want[1]:4d}")
+    print("")
+    print("CLASS TABLE MATCHES" if ok else "CLASS TABLE DISAGREES WITH DATA")
+    return ok
+
 
 def check_paper_table(per_model, pooled):
     print("")
@@ -159,6 +196,7 @@ def main():
     check_paper_table({m: (c["HIT"], c["REFUSED"])
                        for m, c in per_model.items()},
                       (tot["HIT"], tot["REFUSED"]))
+    check_class_table(rows)
 
     # --- propensity: per laundering channel --------------------------------
     print("\n" + "=" * 74)

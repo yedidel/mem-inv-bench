@@ -51,10 +51,19 @@ print("\n-- security: a CHANGE to an established value is a new value --")
 c, m = dep(m5p=True, high_tier_k=2)
 for _ in range(5):                       # a long, genuine history for ESTAB
     m.endorse(ESTAB, "erp-vendor"); m.tick_epoch()
+# Memory holds BOTH the standing record and the change notice, which is the
+# realistic state and the only one in which the second assertion below means
+# anything. Supporting this check with the change notice alone used to pass,
+# because `independent_vouchers` ignored the value it was asked about and
+# counted any trusted item as a voucher for anything.
+old_rec = m.ingest(c["erp"].send(f"Acme remit-to {ESTAB}"))
 it = m.ingest(c["erp"].send(f"Acme billing changed to {NEW}"))
 check("5 epochs of history for the OLD value does not license the NEW one",
-      m.authorize(NEW, [it], tier=Tier.HIGH)[0], False)
-check("the old value is still licensed", m.authorize(ESTAB, [it], tier=Tier.HIGH)[0], True)
+      m.authorize(NEW, [old_rec, it], tier=Tier.HIGH)[0], False)
+check("the old value is still licensed",
+      m.authorize(ESTAB, [old_rec, it], tier=Tier.HIGH)[0], True)
+check("and it is licensed by an item that actually asserts it",
+      [i.iid for i in m.independent_vouchers(ESTAB, [old_rec, it])], [old_rec.iid])
 
 print("\n-- the adversary cannot manufacture history from memory --")
 c, m = dep(m5p=True, high_tier_k=2)

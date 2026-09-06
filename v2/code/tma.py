@@ -402,13 +402,34 @@ class Monitor:
         return bool(doms) and any(e < self.epoch for e in eps)
 
     # -- M3 elevation --------------------------------------------------------
+    def asserts(self, it: Item, value: str) -> bool:
+        """Does this item actually carry `value`?
+
+        Compared on canonical forms, so a legitimately reformatted identifier
+        still matches the item that carries it, for the same reason
+        `history_of` canonicalises.
+
+        This predicate used to be missing. `independent_vouchers` took a
+        `value` argument, documented itself as returning the items that assert
+        it, and then never read it, so any two trusted items in the supporting
+        set corroborated any value at all. The formal models never had the
+        defect, because they quantify over `vouches(d, v)` explicitly; the
+        implementation and the model had drifted apart on the one predicate the
+        sufficiency theorem rests on.
+        """
+        cv = canon(value)
+        return bool(cv) and cv in canon(it.text)
+
     def independent_vouchers(self, value: str, supporting: list[Item]) -> list[Item]:
         """Trusted-labelled items that assert `value`, collapsed to one per trust
         domain. Domain collapsing is what defeats correlated 'independent'
-        principals and manufactured corroboration."""
+        principals and manufactured corroboration. Asserting the value is what
+        makes a voucher a voucher rather than merely a trusted neighbour."""
         seen, out = set(), []
         for it in supporting:
             if it.origin < Origin.TRUSTED:
+                continue
+            if not self.asserts(it, value):
                 continue
             if it.domain in seen:
                 continue
