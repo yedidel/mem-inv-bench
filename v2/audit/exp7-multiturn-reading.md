@@ -4,7 +4,7 @@ The gate here is run END TO END: every tool result enters the monitor as an
 envelope on a channel, the monitor labels it from the verified channel identity,
 and the real gate decides at the consequential call over all of its fields. The
 verdicts are recorded per episode, not computed afterwards. This is the answer to
-R1.9 and to the fair objection that exp1/exp2 combine a measured propensity with
+the fair objection that exp1/exp2 combine a measured propensity with
 a computed gate.
 
 ## Before spending anything: the gate blocked EVERYTHING

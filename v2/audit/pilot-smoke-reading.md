@@ -40,7 +40,7 @@ unambiguous.
 3. **Stipulated `looks_benign` contradicts the measured judge.** The harness
    hardcoded `looks_benign=True` for the summarize channel while the real
    per-model judge returned BLOCK. Stipulating a baseline's perception is the
-   same circularity the reviewers objected to, pointed the other way. Fixed:
+   same circularity criticised in the earlier work, pointed the other way. Fixed:
    the content baseline's verdict now comes ONLY from a real LLM judge.
 4. **Cost reporting reads $0.00000.** The /credits endpoint is too coarse for
    small runs. Fixed: token-priced estimate, with the credits delta kept as a

@@ -9,7 +9,7 @@ v1: "Answer-bias is mitigated, not eliminated: untrusted memory can still colour
 a non-consequential response (surfaced with provenance), and TMA-NM guards the
 retrieval-to-ACTION path, not free-text answers."
 
-R3 rejected the scoping twice, and was right to.
+The scoping was challenged twice, and the challenge was correct.
 
 ## Turn 1: the poison reaches the unblocked answer almost always
 
