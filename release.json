@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "evidence_sha256": "fc1f5be5d24b1852b484ddbbc3bee29d15756de35430664bcde84eaa31d12c39",
+  "planned_evaluation_records": 4384,
+  "pilots_excluded": 14,
+  "source_research_archive_sha256": "ac3c7b10adbdc579773f9788eb612094bae60acce649524ad2e4e060bca66713",
+  "counts": {
+    "dispatch": 1152,
+    "extraction": 480,
+    "external": 768,
+    "recovery": 1728,
+    "camel": 256
+  },
+  "packaging_date": "2026-09-24"
+}

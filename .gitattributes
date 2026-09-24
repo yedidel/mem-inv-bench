@@ -1,0 +1,5 @@
+# Preserve exact bytes used by frozen scientific source hashes.
+* -text
+*.zip binary
+*.whl binary
+*.jar binary

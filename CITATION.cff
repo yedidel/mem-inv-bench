@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite this artifact."
+type: software
+title: "MEM-INV-Bench: Persistent Memory Authorization Experiments"
+version: "2.0.0"
+authors:
+  - family-names: Louck
+    given-names: Yedidel
+    orcid: "https://orcid.org/0009-0008-5836-8736"
+repository-code: "https://github.com/yedidel/mem-inv-bench"
+license: MIT

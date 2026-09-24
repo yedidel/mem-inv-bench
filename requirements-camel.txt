@@ -1,0 +1,14 @@
+# Separate environment for the original CaMeL runner. Core compatibility pins
+# match the original lockfile; additional installed versions are recorded in
+# results/extension/camel-dependencies.json. No Google/Anthropic model calls.
+./vendor/agentdojo-0.1.35-py3-none-any.whl
+requests==2.34.2
+pydantic==2.11.5
+pydantic-ai-slim==0.2.12
+pydantic-graph==0.2.12
+openai==1.82.1
+griffe==1.7.3
+opentelemetry-api==1.33.1
+logfire-api==3.16.1
+jsonref==1.1.0
+openapi-pydantic==0.5.1

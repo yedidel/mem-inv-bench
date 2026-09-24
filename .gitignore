@@ -1,6 +1,7 @@
 __pycache__/
-*.pyc
-.DS_Store
-UPLOAD_*
-states/
-*.st
+*.py[cod]
+.venv/
+.env
+*.sqlite
+reproduction-work/
+verification-work/
