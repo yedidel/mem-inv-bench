@@ -1,10 +1,12 @@
 """Check finite configurations and distinguish counterexamples from tool errors."""
 from pathlib import Path
-import json, re, subprocess, sys, time
+import argparse, json, re, subprocess, sys, time
 
 HERE=Path(__file__).resolve().parent
-OUT=HERE.parent/'results/tlc_validation'
-OUT.mkdir(exist_ok=True)
+parser=argparse.ArgumentParser()
+parser.add_argument('--out-dir', type=Path, default=HERE.parent/'results/tlc_validation')
+OUT=parser.parse_args().out_dir.resolve()
+OUT.mkdir(parents=True, exist_ok=True)
 results=[]
 for defense in ('content','lineage','originbound','tiered_naive','tiered'):
     for prop in ('NoUntrustedOnly','SecuritySem','CanActUnprompted'):
@@ -12,7 +14,7 @@ for defense in ('content','lineage','originbound','tiered_naive','tiered'):
         should_hold=(prop=='NoUntrustedOnly' and defense not in ('content','lineage')) or (prop=='SecuritySem' and defense=='tiered')
         start=time.monotonic()
         run=subprocess.run(['java','-Xmx4g','-cp','tla2tools.jar','tlc2.TLC',
-             '-workers','4','-config',f'MA2_{stem}.cfg','MemAuth2.tla'],
+             '-workers','4','-metadir',str(OUT/'states'),'-config',f'MA2_{stem}.cfg','MemAuth2.tla'],
              cwd=HERE,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=1800)
         out=run.stdout+run.stderr
         (OUT/f'{stem}.txt').write_text(out,encoding='utf-8')

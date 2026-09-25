@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this research software, please cite this artifact."
 type: software
 title: "MEM-INV-Bench: Persistent Memory Authorization Experiments"
-version: "2.0.0"
+version: "2.1.0"
 authors:
   - family-names: Louck
     given-names: Yedidel

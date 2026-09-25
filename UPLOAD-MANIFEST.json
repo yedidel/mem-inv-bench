@@ -15,9 +15,14 @@
     "sha256": "b7ae3cae77924f62c1097be45143b74a83ea0087b4a026dbe8f0d8ff9657e262"
   },
   {
+    "path": "ACTION-CONTRACT.md",
+    "bytes": 2342,
+    "sha256": "39b41523a2c8652b7e9278952cf1752f328527674f311702cd31b005d6c376a9"
+  },
+  {
     "path": "CITATION.cff",
     "bytes": 385,
-    "sha256": "4f90ac9206171120c73ac59f9e3c9edff3b16913b433f56130d0735db26914ce"
+    "sha256": "2db70f8c2352496e838b001def49cd36396bffc85d7016abf8c5287d2b75f25b"
   },
   {
     "path": "LICENSE",
@@ -26,13 +31,13 @@
   },
   {
     "path": "PACKAGE-MANIFEST.json",
-    "bytes": 17897,
-    "sha256": "dc496afaf30d2e99e179a8c3bbea5e9cf1c82e01cbb76585d7b267fec5b1752a"
+    "bytes": 18870,
+    "sha256": "cd98fc9a4fc651222dfdffea5f1c283fe2868f8e684c9408699309340dda3b9b"
   },
   {
     "path": "README.md",
-    "bytes": 2797,
-    "sha256": "43117057704cb7b54035b27789aa90361fef191369b9244706515b98177b8f53"
+    "bytes": 3244,
+    "sha256": "faa624d760a05d0234e652e3c2f4f01dd82257bee2ea71ceb12d16217fe0f61b"
   },
   {
     "path": "REPRODUCE.md",
@@ -43,6 +48,11 @@
     "path": "THIRD_PARTY_NOTICES.md",
     "bytes": 470,
     "sha256": "f4603ce21ae00573c000b8717e5cb300deed9767fc87eddeddfb7957821eb4b8"
+  },
+  {
+    "path": "code/action_authorization.py",
+    "bytes": 7307,
+    "sha256": "9011142bede3b24cf0c43d911c0bc28595b7e47b80f932a66ab25e38d6c1fb54"
   },
   {
     "path": "code/adjudication.py",
@@ -68,6 +78,11 @@
     "path": "code/atomic_dispatch.py",
     "bytes": 1932,
     "sha256": "4fbc3e7fcf393aa3b25b269560dbdc057aab12ed7830253a08dfde47135d5148"
+  },
+  {
+    "path": "code/audit_action_authorization.py",
+    "bytes": 10866,
+    "sha256": "6381099855e86e1d537c5d553364376ed67a5d264e25af755d38488dfad1db28"
   },
   {
     "path": "code/audit_atomic_dispatch.py",
@@ -188,6 +203,11 @@
     "path": "code/experiment_dispatch.py",
     "bytes": 9567,
     "sha256": "6436a5e35b06f2cd1742ac57f6d952fa15628a024ecc0c658821ace9bd393c03"
+  },
+  {
+    "path": "code/experiment_endorsement_services.py",
+    "bytes": 7122,
+    "sha256": "0578f1efe9da20727570d750dbcc3c30bd1830d74231257fbc3985ec1eea2b25"
   },
   {
     "path": "code/experiment_external.py",
@@ -348,6 +368,11 @@
     "path": "code/validate_results.py",
     "bytes": 5093,
     "sha256": "4a55537d096a83aecb62a86516b7b16dcc558e3eb18113d10d370d9ef33f2fcf"
+  },
+  {
+    "path": "evidence/action-contract-evidence.zip",
+    "bytes": 64338,
+    "sha256": "a9934bc23e9cb3df308f9de40a8a04f98065170049be9a2c526fb567f1b09fd2"
   },
   {
     "path": "evidence/recorded-evidence.zip",
@@ -516,8 +541,13 @@
   },
   {
     "path": "formal/unbounded.py",
-    "bytes": 13780,
-    "sha256": "7b1244d457458a6806f0cf41b3209e4e06601c95ea7c35c8518d9b1eacdadcdc"
+    "bytes": 13872,
+    "sha256": "e4f124cbc782cfa6546bfe050e1e4f649ca9a49e12eb88893c0fa5482cedf68f"
+  },
+  {
+    "path": "formal/verify_auth_consumption.py",
+    "bytes": 1678,
+    "sha256": "a4dc66541b395bf6d9dcbaef148fa57bdaa49cb3e274a48209cb0d33f20b71a9"
   },
   {
     "path": "formal/verify_induction.py",
@@ -526,13 +556,13 @@
   },
   {
     "path": "formal/verify_tlc.py",
-    "bytes": 1740,
-    "sha256": "b00fa02ff494f890e67be79f2ac32dbc4f1265256cb2e2728caa6716886a2984"
+    "bytes": 1917,
+    "sha256": "5899304ac926fb0cf0a325c70b8162497a7717d6af6528e0f1c442f4b4d2f977"
   },
   {
     "path": "release.json",
-    "bytes": 454,
-    "sha256": "082dff184334ef88b12dac954ed6c39fbf27ef1ee7ddbc353848305ca1685ddd"
+    "bytes": 713,
+    "sha256": "47d417277f730e74338d86d2491995f3043b9bbb7c23ff82320f1d7659d70159"
   },
   {
     "path": "reported_values.json",
@@ -576,12 +606,12 @@
   },
   {
     "path": "verify.py",
-    "bytes": 3055,
-    "sha256": "e48fad7a017bd4cef2570825bdbf20cd68d7fcce5beaf967feb7ed02de9b17fc"
+    "bytes": 3731,
+    "sha256": "e3a153ad1795ae07fd48918f0daee08c162280c872074195c3deea792b2890be"
   },
   {
     "path": "verify_evidence.py",
-    "bytes": 8288,
-    "sha256": "878550df5ce363ec19b408aab3b00ec23ad468631d4e81d51418b5e0d1942bb7"
+    "bytes": 8728,
+    "sha256": "ec35ea1fd49e302a6f03d53f7009d38c60610b135d1d02d3208cac940d3123c7"
   }
 ]

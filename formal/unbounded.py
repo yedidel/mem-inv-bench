@@ -194,7 +194,7 @@ def act_elevate(a, b):
 
 
 def act_peer_write(a, b):
-    """CROSS-AGENT SHARED MEMORY (experimental.8: "explicitly excluded, despite being"""
+    """Forwarded peer content has no endorsement authority by itself."""
     s0 = Const("pw_s", Slot)
     v0 = Const("pw_v", Value)
     return Exists([s0, v0], And(
@@ -238,6 +238,7 @@ def act_grant_auth(a, b):
 
 def act_act(a, b, defense):
     s0 = Const("ac_s", Slot)
+    v = Const("ac_qv", Value)
     return Exists([s0], And(
         a["origin"](s0) != Empty,
         Or(authorized(a, s0, defense), a["userAuth"](a["val"](s0))),
@@ -245,8 +246,10 @@ def act_act(a, b, defense):
         b["actValue"] == a["val"](s0),
         b["authVia"] == And(Not(authorized(a, s0, defense)),
                             a["userAuth"](a["val"](s0))),
+        ForAll([v], b["userAuth"](v) ==
+               And(a["userAuth"](v), v != a["val"](s0))),
         _unchanged(a, b, ["origin", "val", "dom", "benign", "edge", "elev",
-                          "endorsed", "userAuth"])))
+                          "endorsed"])))
 
 
 def init(st):

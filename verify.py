@@ -33,6 +33,18 @@ def main():
             assert (work/entry['path']).resolve().is_relative_to(work)
             assert hashlib.sha256(z.read(entry['path'])).hexdigest()==entry['sha256']
         z.extractall(work)
+    extra=release.get('additional_evidence')
+    if extra:
+        archive=ROOT/extra['archive']
+        assert hashlib.sha256(archive.read_bytes()).hexdigest()==extra['sha256']
+        with zipfile.ZipFile(archive) as z:
+            assert z.testzip() is None
+            entries=json.loads(z.read('ACTION-EVIDENCE-MANIFEST.json'))
+            for entry in entries:
+                assert (work/entry['path']).resolve().is_relative_to(work)
+                assert hashlib.sha256(z.read(entry['path'])).hexdigest()==entry['sha256']
+            assert set(z.namelist())=={e['path'] for e in entries}|{'ACTION-EVIDENCE-MANIFEST.json'}
+            z.extractall(work)
     # Unmodified analysis code exports numeric LaTeX tables to this temporary
     # directory. No manuscript source or PDF is shipped or needed.
     (work/'paper').mkdir()

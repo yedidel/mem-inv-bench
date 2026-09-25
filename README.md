@@ -55,3 +55,11 @@ The repository root contains the current artifact. Pin a commit or release tag
 when citing or reproducing a result; the artifact version is in `release.json`.
 Use `CITATION.cff` for this software.
 See `LICENSE` and `THIRD_PARTY_NOTICES.md` for attribution.
+
+## Complete-action contract evidence
+
+Artifact 2.1.0 also includes `evidence/action-contract-evidence.zip`: 53 deterministic
+boundary cases, 6,144 state-machine conformance steps, and 72 loopback service
+trials. These are separate from the 4,384 recorded model-evaluation observations.
+The source and reproduction instructions are in the GitHub artifact. Two local
+service processes do not establish independent organizational authority.

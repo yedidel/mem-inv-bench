@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "evidence_sha256": "fc1f5be5d24b1852b484ddbbc3bee29d15756de35430664bcde84eaa31d12c39",
   "planned_evaluation_records": 4384,
   "pilots_excluded": 14,
@@ -11,5 +11,12 @@
     "recovery": 1728,
     "camel": 256
   },
-  "packaging_date": "2026-09-24"
+  "packaging_date": "2026-09-25",
+  "additional_evidence": {
+    "archive": "evidence/action-contract-evidence.zip",
+    "sha256": "a9934bc23e9cb3df308f9de40a8a04f98065170049be9a2c526fb567f1b09fd2",
+    "boundary_cases": 53,
+    "conformance_steps": 6144,
+    "service_trials": 72
+  }
 }
